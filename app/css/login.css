@@ -1,0 +1,121 @@
+/*!
+
+ =========================================================
+ * Login Bootstrap Wizard - v1.0.0
+ =========================================================
+ 
+ * Product Page: 
+ * Copyright 2017
+ * Licensed under 
+ =========================================================
+ 
+ * 
+ */
+
+.auth-form {
+    width: 280px;
+    padding: 10% 0 0;
+    margin: 0 auto;
+}
+
+.session-authentication {
+    margin-bottom: 4px;
+    color: #333;
+    text-align: center;
+    text-shadow: none;
+    background-color: transparent;
+}
+
+.session-authentication .auth-form-header h1 {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+}
+
+.label-link {
+    float: right;
+    font-size: 12px;
+}
+
+.label-link {
+    border: 1px solid transparent;
+}
+
+.session-authentication {
+    padding: 15px 20px;
+    text-align: center;
+    border: 1px solid #d8dee2;
+    border-radius: 5px;
+}
+
+.session-authentication .auth-form-body {
+    border-top: 1px solid #d8dee2;
+    border-radius: 5px;
+}
+
+.auth-form-logo {
+    padding: 4px;
+    width: auto;
+    text-align: center;
+    background-color: transparent;
+}
+
+.auth-form-header {
+    padding: 4px;
+    width: auto;
+    font-size: 12px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.auth-form-body {
+    padding: 2px 20px 2px 20px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #d8dee2;
+    border-top: 1px solid #d8dee2;
+    border-radius: 0 0 2px 2px;
+}
+
+.auth-form-footer {
+    padding: 16px;
+    margin-top: 16px;
+    font-size: 12px;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #d8dee2;
+    border-top: 1px solid #d8dee2;
+    border-radius: 0 0 3px 3px;
+}
+
+div {
+    display: block;
+}
+
+.row {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+body {
+    background-color: #ffffff;
+    color: #24292e;
+    font-size: 14px;
+    font-family: 'Muli', Arial, sans-serif;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    margin-top: auto;
+    margin-bottom: 10px;
+}
