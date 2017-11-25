@@ -1,3 +1,5 @@
+'use strict';
+
 export default function authConfig($stateProvider, $urlRouterProvider) {
 
     // For any unmatched url, redirect to /state1

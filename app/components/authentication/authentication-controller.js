@@ -1,8 +1,9 @@
-export default function authenticationCtrl($scope) {
+'use strict';
+export default function authenticationCtrl($scope, authenticationSrv, $state) {
 
 
-    $scope.service = null;
-
-
+    $scope.login = function login() {
+        $state.go('app.home');
+    }
 
 }

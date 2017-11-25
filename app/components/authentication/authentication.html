@@ -1,6 +1,6 @@
 <div class="container">
 
-    <form action="" method="">
+    <form name='form' ng-submit="login()" role="form">
         <div class="auth-form">
             <div class="auth-form-logo">
                 <img src="img/mybank_logo1_purple.png" />
@@ -12,18 +12,24 @@
 
                 <dl class="form-group">
                     <dt><label>Identifiant du Client</label></dt>
-                    <dd><input class="form-control" type="text" value="Identifiant."></dd>
+                    <dd><input class="form-control" type="text" ng-model="vm.username" required></dd>
+                    <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"> user id is required</span>
                 </dl>
                 <dl class="form-group">
                     <dt><label for="password">
                         Password <a href="/password_reset" class="right label-link">Forgot password?</a>
                         </label>
                     </dt>
-                    <dd><input class="form-control" type="password" value="Password"></dd>
+                    <dd><input class="form-control" type="password" ng-model="vm.password" required></dd>
+
                 </dl>
 
+                <dl class="form-actions">
+                    <!--<input type='button' class='btn btn-purple btn-block' name='connexion' value='connexion' />-->
+                    <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-purple btn-block">connexion</button >
+                    <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+                </dl>
 
-                <input type='button' class='btn btn-purple btn-block' name='connexion' value='connexion' />
             </div>
         </div>
     </form>
