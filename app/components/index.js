@@ -5,7 +5,7 @@ import angular from 'angular';
 import account from './account'
 import authentication from './authentication';
 import bankInformation from './bankInformation';
-import home from './home';
+import homes from './home';
 import personnalInformation from './personnalInformation';
 import angular_ui_router from 'angular-ui-router';
 import ngCookies from 'angular-cookies';
@@ -20,7 +20,7 @@ angular
         // internal module
         account.name,
         authentication.name,
-        home.name,
+        homes.name,
         personnalInformation.name,
         bankInformation.name
     ])

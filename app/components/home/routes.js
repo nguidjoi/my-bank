@@ -5,7 +5,7 @@ export default function homeConfig($stateProvider) {
     // Now set up the states
     $stateProvider
         .state('app.home', {
-            url: 'home',
+            url: 'index',
             views: {
                 'home@app': {
                     templateUrl: 'components/home/home.html',
