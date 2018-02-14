@@ -1,42 +1,32 @@
 'use strict';
 
-
 authenticationSrv.$inject = ['$http', '$cookies', '$rootScope', '$timeout'];
 
 export default function authenticationSrv($http, $cookies, $rootScope, $timeout) {
     var service = {};
 
-    service.Login = Login;
-    service.SetCredentials = SetCredentials;
-    service.ClearCredentials = ClearCredentials;
+    service.login = login;
+    service.SetCredentials = setCredentials;
+    service.ClearCredentials = clearCredentials;
 
     return service;
 
-    function Login(username, password) {
+    function login({ username: username, password: password }) {
 
-        /* Dummy authentication for testing, uses $timeout to simulate api call
-         ----------------------------------------------*/
-        $timeout(function() {
-            var response;
-            (function(user) {
-                if (user !== null && user.password === password) {
-                    response = { success: true };
-                } else {
-                    response = { success: false, message: 'Username or password is incorrect' };
-                }
-            });
-        }, 1000);
-
+        console.dir(username);
+        console.log(password);
         /* Use this for real authentication
          ----------------------------------------------*/
-        //$http.post('/api/authenticate', { username: username, password: password })
-        //    .success(function (response) {
-        //        callback(response);
-        //    });
-        return response;
+        $http.post('http://localhost:8080/api/authenticate', { username: username, password: password, rememberMe: true })
+            .success(function(response) {
+                console.dir(response);
+                callback(response);
+            });
+
+        // return response;
     }
 
-    function SetCredentials(username, password) {
+    function setCredentials(username, password) {
         var authdata = Base64.encode(username + ':' + password);
 
         $rootScope.globals = {
@@ -55,7 +45,7 @@ export default function authenticationSrv($http, $cookies, $rootScope, $timeout)
         $cookies.putObject('globals', $rootScope.globals, { expires: cookieExp });
     }
 
-    function ClearCredentials() {
+    function clearCredentials() {
         $rootScope.globals = {};
         $cookies.remove('globals');
         $http.defaults.headers.common.Authorization = 'Basic';

@@ -22,8 +22,8 @@ export default function authenticationCtrl($scope, authenticationSrv, $state) {
 
     }
 
-    $scope.login() = function(event) {
-        event.preventDefault();
+    function login() {
+        console.dir(vm);
         authenticationSrv.login({
             username: vm.username,
             password: vm.password,

@@ -1,6 +1,6 @@
 <div class="container">
 
-    <form name='form' ng-submit="login()" role="form">
+    <form name='form' ng-submit="vm.login()" role="form">
         <div class="auth-form">
             <div class="auth-form-logo">
                 <img src="img/mybank_logo1_purple.png" />
@@ -11,7 +11,7 @@
             <div class="row auth-form-body">
 
                 <dl class="form-group">
-                    <dt><label>Identifiant du Client</label></dt>
+                    <dt><label data-translate="login.form.username">User Id </label></dt>
                     <dd><input class="form-control" type="text" ng-model="vm.username" required></dd>
                     <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block"> user id is required</span>
                 </dl>
@@ -21,7 +21,6 @@
                         </label>
                     </dt>
                     <dd><input class="form-control" type="password" ng-model="vm.password" required></dd>
-
                 </dl>
 
                 <dl class="form-actions">
@@ -35,6 +34,6 @@
     </form>
     <p class="auth-form auth-form-footer">
         New to Mybank ?
-        <a href="#/account" ui-sref="app.account"> Create an account.</a>
+<a href="" ng-click="vm.register()"> Create an account.</a>
     </p>
 </div>
