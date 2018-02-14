@@ -28,7 +28,7 @@ export default function authenticationCtrl($scope, authenticationSrv, $state) {
             password: vm.password,
         }).then(function() {
             vm.authenticationError = false;
-            $state.go('app.home');
+            $state.go('app.account');
 
             $rootScope.$broadcast('authenticationSuccess');
 
