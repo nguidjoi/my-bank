@@ -1,6 +1,7 @@
 'use strict';
 export default function authenticationCtrl($scope, authenticationSrv, $state) {
 
+    console.dir(this);
     var vm = this;
 
     vm.authenticationError = false;
@@ -21,7 +22,7 @@ export default function authenticationCtrl($scope, authenticationSrv, $state) {
 
     }
 
-    function login(event) {
+    $scope.login() = function(event) {
         event.preventDefault();
         authenticationSrv.login({
             username: vm.username,
@@ -31,9 +32,6 @@ export default function authenticationCtrl($scope, authenticationSrv, $state) {
             $state.go('app.account');
 
             $rootScope.$broadcast('authenticationSuccess');
-
-            // previousState was set in the authExpiredInterceptor before being redirected to login modal.
-            // since login is successful, go to stored previousState and clear previousState
 
         }).catch(function() {
             vm.authenticationError = true;
