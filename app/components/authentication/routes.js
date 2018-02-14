@@ -13,7 +13,8 @@ export default function authConfig($stateProvider, $urlRouterProvider) {
             views: {
                 'login@app': {
                     templateUrl: 'components/authentication/authentication.html',
-                    controller: 'authenticationCtrl'
+                    controller: 'authenticationCtrl',
+                    controllerAs: 'vm'
                 }
             }
 
