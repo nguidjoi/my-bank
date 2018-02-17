@@ -2,7 +2,7 @@
 
 import allcss from '../index.js';
 import angular from 'angular';
-//import { name as ngstorage } from 'ngstorage';
+import { name as ngstorage } from 'ngstorage';
 import angular_ui_router from 'angular-ui-router';
 //import ngCacheBuster from "angular-cache-buster";
 import account from './account'
@@ -21,7 +21,7 @@ import personnalInformation from './personnalInformation';
 angular
     .module('ae', [
         // external libs
-        //ngstorage,
+        ngstorage,
         angular_ui_router,
         //ngCacheBuster,
         // internal module
