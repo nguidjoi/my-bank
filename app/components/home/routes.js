@@ -9,7 +9,8 @@ export default function homeConfig($stateProvider) {
             views: {
                 'home@app': {
                     templateUrl: 'components/home/home.html',
-                    controller: 'homeCtrl'
+                    controller: 'homeCtrl',
+                    controllerAs: 'vm'
                 }
             }
         });

@@ -1,7 +1,6 @@
 'use strict';
 export default function authenticationCtrl($scope, authenticationSrv, $state) {
 
-    console.dir(this);
     var vm = this;
 
     vm.authenticationError = false;
@@ -23,13 +22,13 @@ export default function authenticationCtrl($scope, authenticationSrv, $state) {
     }
 
     function login() {
-        console.dir(vm);
+
         authenticationSrv.login({
             username: vm.username,
             password: vm.password,
-        }).then(function() {
+        }).then(function(response) {
             vm.authenticationError = false;
-            $state.go('app.account');
+            $state.go('app.home');
 
             $rootScope.$broadcast('authenticationSuccess');
 
@@ -39,7 +38,6 @@ export default function authenticationCtrl($scope, authenticationSrv, $state) {
     }
 
     function register() {
-
         $state.go('app.account');
     }
 

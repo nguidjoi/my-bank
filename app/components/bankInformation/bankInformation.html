@@ -12,21 +12,10 @@
                 <nav class="mt-0">
                     <ul class="d-flex list-style-none">
                         <li class="ml-2">
-                            <a href="/features" class="text-white js-selected-navigation-item HeaderNavlink px-0 py-2 m-0">Features</a>
+                            <a href="/operation" class="text-white js-selected-navigation-item HeaderNavlink px-0 py-2 m-0">Operations</a>
                         </li>
                         <li class="ml-4">
-                            <a href="/business" class="text-white js-selected-navigation-item HeaderNavlink px-0 py-2 m-0">Business</a>
-                        </li>
-
-                        <li class="ml-4">
-                            <a href="/explore" class="text-white js-selected-navigation-item HeaderNavlink px-0 py-2 m-0">Explore</a>
-                        </li>
-
-                        <li class="ml-4">
-                            <a href="/marketplace" class="text-white js-selected-navigation-item HeaderNavlink px-0 py-2 m-0">Marketplace</a>
-                        </li>
-                        <li class="ml-4">
-                            <a href="/pricing" class="text-white js-selected-navigation-item HeaderNavlink px-0 py-2 m-0">Pricing</a>
+                            <a href="/myCards" class="text-white js-selected-navigation-item HeaderNavlink px-0 py-2 m-0">Banking Cards</a>
                         </li>
                     </ul>
                 </nav>
@@ -34,9 +23,9 @@
                 <div class="d-flex">
                     <span class="d-inline-block">                
                         <div class="HeaderNavlink px-0 py-2 m-0">
-                            <a class="text-bold text-white no-underline" href="/login?return_to=%2Fjoin" >Sign in</a>
+                            <a class="text-bold text-white no-underline" href="/#/authentification" >Sign in</a>
                             <span class="text-gray">or</span>
-                    <a class="text-bold text-white no-underline" href="/join?source=header">Sign up</a>
+                    <a class="text-bold text-white no-underline" href="/#/account">Sign up</a>
                 </div>
                 </span>
             </div>
@@ -73,13 +62,13 @@
                         </h2>
                         <dl class="form-group">
                             <dt><label>Username</label></dt>
-                            <dd><input class="form-control" type="text" value="Example Value"></dd>
+                            <dd><input class="form-control" type="text" ng-model="vm.username" required></dd>
                             <p class="note">This will be your username. You can add the name of your organization later.</p>
                         </dl>
                         <br>
                         <dl class="form-group">
                             <dt><label>Email address</label></dt>
-                            <dd><input class="form-control" type="text" value="Email address"></dd>
+                            <dd><input class="form-control" type="text" ng-model="vm.email"></dd>
                             <p class="note">We'll occasionally send updates about your account to this inbox. We'll never share your email address with anyone.</p>
                         </dl>
 
@@ -90,10 +79,10 @@
                         </dl>
 
                         <p class="tos-info">By clicking on "Create an account" below, you are agreeing to the
-                            <a href="https://help.github.com/terms" target="_blank">Terms of Service</a> and the
-                            <a href="https://help.github.com/privacy" target="_blank">Privacy Policy</a>.</p>
+                            <a href="" target="_blank">Terms of Service</a> and the
+                            <a href="" target="_blank">Privacy Policy</a>.</p>
 
-                        <button type="submit" class="btn btn-purple" ng-click="clickHandler()"> Create an account</button> {{99+9}}
+                        <button type="submit" ng-disabled="form.$invalid" class="btn btn-purple" ng-click="clickHandler()"> Create an account</button>
                     </form>
                 </div>
 

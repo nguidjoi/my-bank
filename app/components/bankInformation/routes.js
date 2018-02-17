@@ -9,7 +9,8 @@ export default function bankConfig($stateProvider) {
             views: {
                 'bankInformation@app': {
                     templateUrl: 'components/bankInformation/bankInformation.html',
-                    controller: 'bankCtrl'
+                    controller: 'bankCtrl',
+                    controllerAs: 'vm'
                 }
             }
         });

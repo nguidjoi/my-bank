@@ -9,7 +9,8 @@ export default function accountConfig($stateProvider) {
             views: {
                 'creation@app': {
                     templateUrl: 'components/account/account.html',
-                    controller: 'accountCtrl'
+                    controller: 'accountCtrl',
+                    controllerAs: 'vm'
                 }
             }
         });

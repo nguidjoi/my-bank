@@ -7,6 +7,8 @@ import authentication from './authentication';
 import bankInformation from './bankInformation';
 import homes from './home';
 import personnalInformation from './personnalInformation';
+import config from './config';
+import interceptor from './interceptor';
 import angular_ui_router from 'angular-ui-router';
 import ngCookies from 'angular-cookies';
 
@@ -15,8 +17,8 @@ angular
         // external libs
         angular_ui_router,
         ngCookies,
-
-
+        config.name,
+        interceptor.name,
         // internal module
         account.name,
         authentication.name,

@@ -6,7 +6,8 @@ export default function personnalInformationConfig($stateProvider) {
             views: {
                 'personnalInformation@app': {
                     templateUrl: 'components/personnalInformation/personnalInformation.html',
-                    controller: 'personnalInformationCtrl'
+                    controller: 'personnalInformationCtrl',
+                    controllerAs: 'vm'
                 }
             }
         });
