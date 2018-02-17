@@ -23,7 +23,7 @@ angular
         // external libs
         ngstorage,
         angular_ui_router,
-        ngCacheBuster,
+        //ngCacheBuster,
         // internal module
         account.name,
         authentication.name,
