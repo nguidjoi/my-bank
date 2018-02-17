@@ -1,8 +1,8 @@
     'use strict';
 
-    notificationInterceptor.$inject = ['$q', 'AlertService'];
+    notificationInterceptor.$inject = ['$q'];
 
-    function notificationInterceptor($q, AlertService) {
+    function notificationInterceptor($q) {
         var service = {
             response: response
         };
@@ -15,8 +15,10 @@
             }).sort();
             var alertKey = response.headers(headers[0]);
             if (angular.isString(alertKey)) {
-                AlertService.success(alertKey, { param: response.headers(headers[1]) });
+                console.log("Alert success")
             }
             return response;
         }
     }
+
+    export default notificationInterceptor;

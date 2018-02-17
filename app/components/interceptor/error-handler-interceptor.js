@@ -2,7 +2,7 @@
 
    errorHandlerInterceptor.$inject = ['$q', '$rootScope'];
 
-   export default function errorHandlerInterceptor($q, $rootScope) {
+   function errorHandlerInterceptor($q, $rootScope) {
        var service = {
            responseError: responseError
        };
@@ -16,3 +16,5 @@
            return $q.reject(response);
        }
    }
+
+   export default errorHandlerInterceptor;

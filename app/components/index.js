@@ -10,9 +10,9 @@ import authentication from './authentication';
 import bankInformation from './bankInformation';
 import homes from './home';
 import personnalInformation from './personnalInformation';
-//import { name as httpConfig } from './config/http-config';
-//import { name as localStorageConfig } from './config/local-storage-config'
-//import { name as authInterceptor } from './interceptor/auth-interceptor';
+import httpConfig from './config/http-config';
+import localStorageConfig from './config/local-storage-config'
+import authInterceptor from './interceptor/auth-interceptor';
 //import { name as autExpiredInterceptor } from './interceptor/auth-expired-interceptor';
 //import { name as errorHandlerInterceptor } from './interceptor/error-handler-interceptor';
 //import { name as notificationInterceptor } from './interceptor/notofication-interceptor';
@@ -23,7 +23,7 @@ angular
         // external libs
         ngstorage,
         angular_ui_router,
-        //ngCacheBuster,
+
         // internal module
         account.name,
         authentication.name,
@@ -31,7 +31,10 @@ angular
         personnalInformation.name,
         bankInformation.name
     ])
-    .config(require('./app/routes'));
+    .factory('authInterceptor', authInterceptor)
+    .config(require('./app/routes'))
+    .config(localStorageConfig)
+    .config(httpConfig);
 
 angular
     .element(document)

@@ -1,10 +1,10 @@
 'use strict';
 
-httpConfig.$inject = ['$urlRouterProvider', '$httpProvider', 'httpRequestInterceptorCacheBusterProvider', '$urlMatcherFactoryProvider'];
+httpConfig.$inject = ['$urlRouterProvider', '$httpProvider', '$urlMatcherFactoryProvider'];
 
-export default function httpConfig($urlRouterProvider, $httpProvider, httpRequestInterceptorCacheBusterProvider, $urlMatcherFactoryProvider) {
+function httpConfig($urlRouterProvider, $httpProvider, $urlMatcherFactoryProvider) {
     //Cache everything except rest api requests
-    httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*api.*/, /.*protected.*/], true);
+    //httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*api.*/, /.*protected.*/], true);
 
     $urlRouterProvider.otherwise('/');
 
@@ -23,3 +23,5 @@ export default function httpConfig($urlRouterProvider, $httpProvider, httpReques
         pattern: /bool|true|0|1/
     });
 }
+
+export { httpConfig }

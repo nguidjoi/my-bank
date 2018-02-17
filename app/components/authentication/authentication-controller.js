@@ -18,7 +18,6 @@ export default function authenticationCtrl($scope, authenticationSrv, $state) {
             password: null
         };
         vm.authenticationError = false;
-
     }
 
     function login() {
@@ -32,7 +31,8 @@ export default function authenticationCtrl($scope, authenticationSrv, $state) {
 
             $rootScope.$broadcast('authenticationSuccess');
 
-        }).catch(function() {
+        }).catch(function(error) {
+            console.log(error);
             vm.authenticationError = true;
         });
     }
