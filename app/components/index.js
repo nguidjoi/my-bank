@@ -15,7 +15,7 @@ import { name as localStorageConfig } from './config/local-storage-config'
 import { name as authInterceptor } from './interceptor/auth-interceptor';
 import { name as autExpiredInterceptor } from './interceptor/auth-expired-interceptor';
 import { name as errorHandlerInterceptor } from './interceptor/error-handler-interceptor';
-import { name as notificationInterceptor } from './interceptor/notofication-interceptor';
+//import { name as notificationInterceptor } from './interceptor/notofication-interceptor';
 
 
 angular
@@ -36,7 +36,7 @@ angular
     .factory('errorHandlerInterceptor', errorHandlerInterceptor)
     .factory('notificationInterceptor', notificationInterceptor)
     .config(httpConfig)
-    .config(localStorageConfig)
+    //.config(localStorageConfig)
     .config(require('./app/routes'));
 
 
