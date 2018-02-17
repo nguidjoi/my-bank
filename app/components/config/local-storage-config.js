@@ -3,6 +3,6 @@
     localStorageConfig.$inject = ['$localStorageProvider', '$sessionStorageProvider'];
 
     export default function localStorageConfig($localStorageProvider, $sessionStorageProvider) {
-        $localStorageProvider.setKeyPrefix('myBank-');
-        $sessionStorageProvider.setKeyPrefix('myBank-');
+        $localStorageProvider.setKeyPrefix('mbank-');
+        $sessionStorageProvider.setKeyPrefix('mbank-');
     }

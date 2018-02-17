@@ -1,28 +1,23 @@
-    'use strict';
+'use strict';
+authExpiredInterceptor.$inject = ['$rootScope', '$q', '$injector', '$localStorage', '$sessionStorage'];
 
-    export default angular
-        .module('ae')
-        .factory('authExpiredInterceptor', authExpiredInterceptor);
+export default function authExpiredInterceptor($rootScope, $q, $injector, $localStorage, $sessionStorage) {
+    var service = {
+        responseError: responseError
+    };
 
-    authExpiredInterceptor.$inject = ['$rootScope', '$q', '$injector', '$localStorage', '$sessionStorage'];
+    return service;
 
-    function authExpiredInterceptor($rootScope, $q, $injector, $localStorage, $sessionStorage) {
-        var service = {
-            responseError: responseError
-        };
-
-        return service;
-
-        function responseError(response) {
-            if (response.status === 401) {
-                delete $localStorage.authenticationToken;
-                delete $sessionStorage.authenticationToken;
-                var Principal = $injector.get('Principal');
-                if (Principal.isAuthenticated()) {
-                    var Auth = $injector.get('Auth');
-                    Auth.authorize(true);
-                }
+    function responseError(response) {
+        if (response.status === 401) {
+            delete $localStorage.authenticationToken;
+            delete $sessionStorage.authenticationToken;
+            var Principal = $injector.get('Principal');
+            if (Principal.isAuthenticated()) {
+                var Auth = $injector.get('Auth');
+                Auth.authorize(true);
             }
-            return $q.reject(response);
         }
+        return $q.reject(response);
     }
+}
