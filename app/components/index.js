@@ -33,8 +33,6 @@ angular
     ])
     .config(require('./app/routes'));
 
-
-
 angular
     .element(document)
     .ready(function() {
