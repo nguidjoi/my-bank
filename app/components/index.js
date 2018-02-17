@@ -31,13 +31,13 @@ angular
         personnalInformation.name,
         bankInformation.name
     ])
-    .factory('authInterceptor', authInterceptor)
-    //.factory('autExpiredInterceptor', autExpiredInterceptor)
-    //.factory('errorHandlerInterceptor', errorHandlerInterceptor)
-    //.factory('notificationInterceptor', notificationInterceptor)
-    .config(require('./app/routes'))
-    //.config(httpConfig);
-    //.config(localStorageConfig);
+    .config(require('./app/routes'));
+//.factory('authInterceptor', authInterceptor)
+//.factory('autExpiredInterceptor', autExpiredInterceptor)
+//.factory('errorHandlerInterceptor', errorHandlerInterceptor)
+//.factory('notificationInterceptor', notificationInterceptor)
+//.config(httpConfig);
+//.config(localStorageConfig);
 
 
 angular
