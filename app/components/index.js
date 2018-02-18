@@ -5,9 +5,11 @@ import angular from 'angular';
 import { name as ngstorage } from 'ngstorage';
 import angular_ui_router from 'angular-ui-router';
 import { name as ngCacheBuster } from 'angular-cache-buster';
-import account from './account'
+import account from './account';
+import { account, register, activate } from './account/account-service';
+import { password, passwordResetFinish, passwordResetInit } from './account/password';
+import { principal } from './account/principal';
 import authentication from './authentication';
-import { authServerProvider } from './authentication/authentication-provider'
 import bankInformation from './bankInformation';
 import homes from './home';
 import personnalInformation from './personnalInformation';
@@ -32,7 +34,13 @@ angular
         personnalInformation.name,
         bankInformation.name
     ])
-    .factory('authServerProvider', authServerProvider)
+    .factory('account', account)
+    .factory('register', register)
+    .factory('activate', activate)
+    .factory('password', password)
+    .factory('passwordResetFinish', passwordResetFinish)
+    .factory('passwordResetInit', passwordResetInit)
+    .factory('principal', principal)
     .factory('authInterceptor', authInterceptor)
     .factory('authExpiredInterceptor', authExpiredInterceptor)
     .factory('errorHandlerInterceptor', errorHandlerInterceptor)
