@@ -25,7 +25,7 @@
                rememberMe: credentials.rememberMe
            };
 
-           const url = 'http: //localhost:8080/api/authenticate';
+           const url = 'http://localhost:8080/api/authenticate';
            return $http.post(url, data).success(authenticateSuccess);
 
            function authenticateSuccess(data, status, headers) {
