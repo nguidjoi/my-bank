@@ -13,24 +13,24 @@ export default function authenticationSrv($http) {
         var result = null;
 
         const url = 'http: //localhost:8080/api/authenticate';
-        data = {
+        const data = {
             username: username,
             password: password,
             rememberMe: true
         }
 
 
-        $http.post(url, data).then(function(response) {
-            result = response;
+        return $http.post(url, data).then(function(response) {
             console.log('Success');
             console.dir(response);
+            return response;
         }, function(response) {
-            result = response;
             console.log('Error');
             console.dir(response);
+            return response;
         });
 
-        return result;
+
     }
 
 }
