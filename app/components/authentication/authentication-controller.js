@@ -1,5 +1,5 @@
 'use strict';
-export default function authenticationCtrl($scope, authenticationSrv, $state) {
+export default function authenticationCtrl($rootScope, $scope, authenticationSrv, $state) {
 
     var vm = this;
 
@@ -28,7 +28,6 @@ export default function authenticationCtrl($scope, authenticationSrv, $state) {
         }).then(function(response) {
             vm.authenticationError = false;
             $state.go('app.home');
-
             $rootScope.$broadcast('authenticationSuccess');
 
         }).catch(function(error) {
