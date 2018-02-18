@@ -7,6 +7,7 @@ import angular_ui_router from 'angular-ui-router';
 import { name as ngCacheBuster } from 'angular-cache-buster';
 import account from './account'
 import authentication from './authentication';
+import { authServerProvider } from './authentication/authentication-provider'
 import bankInformation from './bankInformation';
 import homes from './home';
 import personnalInformation from './personnalInformation';
@@ -31,6 +32,7 @@ angular
         personnalInformation.name,
         bankInformation.name
     ])
+    .factory('authServerProvider', authServerProvider)
     .factory('authInterceptor', authInterceptor)
     .factory('authExpiredInterceptor', authExpiredInterceptor)
     .factory('errorHandlerInterceptor', errorHandlerInterceptor)
