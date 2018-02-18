@@ -1,7 +1,6 @@
 'use strict';
 
 authInterceptor.$inject = ['$rootScope', '$q', '$location', '$localStorage', '$sessionStorage'];
-
 export function authInterceptor($rootScope, $q, $location, $localStorage, $sessionStorage) {
     var service = {
         request: request

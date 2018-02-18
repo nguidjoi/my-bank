@@ -1,5 +1,5 @@
 'use strict';
-export default function authenticationCtrl($rootScope, $scope, authenticationSrv, $state) {
+export default function authenticationCtrl($rootScope, $scope, auth, $state) {
 
     var vm = this;
 
@@ -22,7 +22,7 @@ export default function authenticationCtrl($rootScope, $scope, authenticationSrv
 
     function login() {
 
-        authenticationSrv.login({
+        auth.login({
             username: vm.username,
             password: vm.password,
         }).then(function(response) {
