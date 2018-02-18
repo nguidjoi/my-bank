@@ -5,7 +5,7 @@ import angular from 'angular';
 import { name as ngstorage } from 'ngstorage';
 import angular_ui_router from 'angular-ui-router';
 import { name as ngCacheBuster } from 'angular-cache-buster';
-import account from './account';
+import accounts from './account';
 import { account, register, activate } from './account/account-service';
 import { password, passwordResetFinish, passwordResetInit } from './account/password';
 import { principal } from './account/principal';
@@ -28,7 +28,7 @@ angular
         angular_ui_router,
 
         // internal module
-        account.name,
+        accounts.name,
         authentication.name,
         homes.name,
         personnalInformation.name,
