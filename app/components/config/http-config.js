@@ -2,7 +2,7 @@
 
 httpConfig.$inject = ['$urlRouterProvider', '$httpProvider', '$urlMatcherFactoryProvider'];
 
-function httpConfig($urlRouterProvider, $httpProvider, $urlMatcherFactoryProvider) {
+export function httpConfig($urlRouterProvider, $httpProvider, $urlMatcherFactoryProvider) {
     //Cache everything except rest api requests
     //httpRequestInterceptorCacheBusterProvider.setMatchlist([/.*api.*/, /.*protected.*/], true);
 
@@ -23,5 +23,3 @@ function httpConfig($urlRouterProvider, $httpProvider, $urlMatcherFactoryProvide
         pattern: /bool|true|0|1/
     });
 }
-
-export { httpConfig }
