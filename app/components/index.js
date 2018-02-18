@@ -13,9 +13,9 @@ import personnalInformation from './personnalInformation';
 import { httpConfig } from './config/http-config';
 import { localStorageConfig } from './config/local-storage-config'
 import { authInterceptor } from './interceptor/auth-interceptor';
-//import { name as autExpiredInterceptor } from './interceptor/auth-expired-interceptor';
-//import { name as errorHandlerInterceptor } from './interceptor/error-handler-interceptor';
-//import { name as notificationInterceptor } from './interceptor/notofication-interceptor';
+import { autExpiredInterceptor } from './interceptor/auth-expired-interceptor';
+import { errorHandlerInterceptor } from './interceptor/error-handler-interceptor';
+import { notificationInterceptor } from './interceptor/notofication-interceptor';
 
 
 angular
@@ -32,6 +32,9 @@ angular
         bankInformation.name
     ])
     .factory('authInterceptor', authInterceptor)
+    .factory('autExpiredInterceptor', autExpiredInterceptor)
+    .factory('errorHandlerInterceptor', errorHandlerInterceptor)
+    .factory('notificationInterceptor', notificationInterceptor)
     .config(require('./app/routes'))
     .config(localStorageConfig)
     .config(httpConfig);
