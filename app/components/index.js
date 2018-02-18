@@ -7,7 +7,7 @@ import ngResource from 'angular-resource';
 import angular_ui_router from 'angular-ui-router';
 import angular_dynamic_locale from 'angular-dynamic-locale';
 import { name as ngCacheBuster } from 'angular-cache-buster';
-import {pascalprecht.translate} from 'angular-translate';
+import angulartranslate from 'angular-translate';
 import accounts from './account';
 import { account, register, activate } from './account/account-service';
 import { password, passwordResetFinish, passwordResetInit } from './account/password';
@@ -30,7 +30,7 @@ angular
         angular_ui_router,
         ngResource,
         angular_dynamic_locale,
-        pascalprecht.translate,
+        'pascalprecht.translate',
         // internal module
         accounts.name,
         authentication.name,
