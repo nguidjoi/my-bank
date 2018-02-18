@@ -3,9 +3,11 @@
 import allcss from '../index.js';
 import angular from 'angular';
 import { name as ngstorage } from 'ngstorage';
-import  ngResource from 'angular-resource';
+import ngResource from 'angular-resource';
 import angular_ui_router from 'angular-ui-router';
+import angular_dynamic_locale from 'angular-dynamic-locale';
 import { name as ngCacheBuster } from 'angular-cache-buster';
+import {pascalprecht.translate} from 'angular-translate';
 import accounts from './account';
 import { account, register, activate } from './account/account-service';
 import { password, passwordResetFinish, passwordResetInit } from './account/password';
@@ -21,14 +23,14 @@ import { authExpiredInterceptor } from './interceptor/auth-expired-interceptor';
 import { errorHandlerInterceptor } from './interceptor/error-handler-interceptor';
 import { notificationInterceptor } from './interceptor/notofication-interceptor';
 
-
 angular
     .module('ae', [
         // external libs
         ngstorage,
         angular_ui_router,
         ngResource,
-
+        angular_dynamic_locale,
+        pascalprecht.translate,
         // internal module
         accounts.name,
         authentication.name,
