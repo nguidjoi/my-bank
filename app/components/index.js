@@ -3,7 +3,7 @@
 import allcss from '../index.js';
 import angular from 'angular';
 import { name as ngstorage } from 'ngstorage';
-import {name as ngResource} from 'ngResource'
+import  ngResource from 'ngResource';
 import angular_ui_router from 'angular-ui-router';
 import { name as ngCacheBuster } from 'angular-cache-buster';
 import accounts from './account';
