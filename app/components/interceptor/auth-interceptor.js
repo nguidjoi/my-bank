@@ -2,7 +2,7 @@
 
 authInterceptor.$inject = ['$rootScope', '$q', '$location', '$localStorage', '$sessionStorage'];
 
-function authInterceptor($rootScope, $q, $location, $localStorage, $sessionStorage) {
+export function authInterceptor($rootScope, $q, $location, $localStorage, $sessionStorage) {
     var service = {
         request: request
     };
@@ -21,5 +21,3 @@ function authInterceptor($rootScope, $q, $location, $localStorage, $sessionStora
         return config;
     }
 }
-
-export default authInterceptor;
