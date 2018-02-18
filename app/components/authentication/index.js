@@ -6,6 +6,6 @@ import authConfig from './routes';
 export default angular
     .module('ae.authentication', [])
     .controller('authenticationCtrl', authenticationCtrl)
-    .factory('authenticationSrv', authenticationSrv)
+    .factory('auth', auth)
     .factory('authServerProvider', authServerProvider)
     .config(authConfig);
