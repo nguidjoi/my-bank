@@ -32,7 +32,7 @@ angular
         bankInformation.name
     ])
     .factory('authInterceptor', authInterceptor)
-    .factory('authExpiredInterceptor', autExpiredInterceptor)
+    .factory('authExpiredInterceptor', authExpiredInterceptor)
     .factory('errorHandlerInterceptor', errorHandlerInterceptor)
     .factory('notificationInterceptor', notificationInterceptor)
     .config(require('./app/routes'))
