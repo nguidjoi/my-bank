@@ -2,7 +2,7 @@
 
     notificationInterceptor.$inject = ['$q'];
 
-    function notificationInterceptor($q) {
+    export function notificationInterceptor($q) {
         var service = {
             response: response
         };
@@ -20,5 +20,3 @@
             return response;
         }
     }
-
-    export default notificationInterceptor;
