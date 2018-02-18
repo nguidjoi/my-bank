@@ -2,7 +2,7 @@ account.$inject = ['$resource'];
 register.$inject = ['$resource'];
 activate.$inject = ['$resource'];
 export function account($resource) {
-    var service = $resource('http:localhost:8080/api/account', {}, {
+    var service = $resource('http://localhost:8080/api/account', {}, {
         'get': {
             method: 'GET',
             params: {},
@@ -20,11 +20,11 @@ export function account($resource) {
 }
 
 export function register($resource) {
-    return $resource('http:localhost:8080/api/register', {}, {});
+    return $resource('http://localhost:8080/api/register', {}, {});
 }
 
 export function activate($resource) {
-    var service = $resource('http:localhost:8080/api/activate', {}, {
+    var service = $resource('http://localhost:8080/api/activate', {}, {
         'get': { method: 'GET', params: {}, isArray: false }
     });
 
