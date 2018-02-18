@@ -31,7 +31,7 @@ angular
         personnalInformation.name,
         bankInformation.name
     ])
-    .factory('authInterceptor', authInterceptor)
+    .factory('authInterceptor', authInterceptor.call)
     .config(require('./app/routes'))
     .config(localStorageConfig)
     .config(httpConfig);
