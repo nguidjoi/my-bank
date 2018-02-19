@@ -9,6 +9,12 @@ export default function personnalInformationConfig($stateProvider) {
                     controller: 'personnalInformationCtrl',
                     controllerAs: 'vm'
                 }
+            },
+            resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('personnalInfo');
+                        return $translate.refresh();
+                }]
             }
         });
 }

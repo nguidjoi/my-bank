@@ -16,6 +16,12 @@ export default function authConfig($stateProvider, $urlRouterProvider) {
                     controller: 'authenticationCtrl',
                     controllerAs: 'vm'
                 }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate,$translatePartialLoader) {
+                    $translatePartialLoader.addPart('login');
+                    return $translate.refresh();
+                }]
             }
 
         });

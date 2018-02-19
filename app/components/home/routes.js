@@ -12,6 +12,12 @@ export default function homeConfig($stateProvider) {
                     controller: 'homeCtrl',
                     controllerAs: 'vm'
                 }
+            },
+            resolve: {
+                    translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                        $translatePartialLoader.addPart('home');
+                        return $translate.refresh();
+                    }]
             }
         });
 
