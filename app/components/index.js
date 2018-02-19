@@ -69,7 +69,10 @@ angular
     .config(translationConfig)
     .config(localStorageConfig)
     .config(httpConfig)
-    .constant('LANGUAGES', ['fr']);
+    .constant('LANGUAGES', ['fr'])
+    .constant('VERSION', "0.0.1-SNAPSHOT")
+    .constant('DEBUG_INFO_ENABLED', true)
+    .constant('BUILD_TIMESTAMP', "");
 
 angular
     .element(document)
