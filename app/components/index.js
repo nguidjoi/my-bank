@@ -42,7 +42,6 @@ angular
         ngResource,
         angularTranslateInterpolationMessageformat,
         angularTranslateLoaderPartial,
-        
         'tmh.dynamicLocale',
         'pascalprecht.translate',
         // internal module
