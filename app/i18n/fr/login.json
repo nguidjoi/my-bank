@@ -2,6 +2,7 @@
     "login": {
         "title": "Authentification",
         "form": {
+            "username": "User Identity",
             "password": "Mot de passe",
             "password.placeholder": "Votre mot de passe",
             "rememberme": "Garder la session ouverte",
