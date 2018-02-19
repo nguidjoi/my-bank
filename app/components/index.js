@@ -79,8 +79,16 @@ angular
     .constant('DEBUG_INFO_ENABLED', true)
     .constant('BUILD_TIMESTAMP', "");
 
+     run.$inject = ['stateHandler', 'translationHandler'];
+
+    function run(stateHandler, translationHandler) {
+        stateHandler.initialize();
+        translationHandler.initialize();
+    }
+
 angular
     .element(document)
     .ready(function() {
         angular.bootstrap(document, ['ae']);
+        run();
     });
