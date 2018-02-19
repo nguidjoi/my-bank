@@ -27,8 +27,7 @@ import { authExpiredInterceptor } from './interceptor/auth-expired-interceptor';
 import { errorHandlerInterceptor } from './interceptor/error-handler-interceptor';
 import { notificationInterceptor } from './interceptor/notofication-interceptor';
 import {translationHandler} from './handlers/translation-handler';
-import {stateHandler} from './handlers/stateHandler';
-
+import {stateHandler} from './handlers/state-handler';
 import {languageService} from './language/language-service';
 import {findLanguageFromKey, findLanguageRtlFromKey } from './language/language-filter';
 
