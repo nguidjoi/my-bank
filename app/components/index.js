@@ -91,5 +91,4 @@ angular
     .element(document)
     .ready(function() {
         angular.bootstrap(document, ['ae']);
-        run();
-    }).;
+    });
