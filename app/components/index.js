@@ -77,7 +77,8 @@ angular
     .constant('LANGUAGES', ['fr'])
     .constant('VERSION', "0.0.1-SNAPSHOT")
     .constant('DEBUG_INFO_ENABLED', true)
-    .constant('BUILD_TIMESTAMP', "");
+    .constant('BUILD_TIMESTAMP', "")
+    .run(run);
 
      run.$inject = ['stateHandler', 'translationHandler'];
 
@@ -91,4 +92,4 @@ angular
     .ready(function() {
         angular.bootstrap(document, ['ae']);
         run();
-    });
+    }).;
