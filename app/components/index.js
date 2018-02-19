@@ -10,6 +10,7 @@ import { name as ngCacheBuster } from 'angular-cache-buster';
 import angulartranslate from 'angular-translate';
 import ngCookies from 'angular-cookies';
 import angularTranslateInterpolationMessageformat from 'angular-translate-interpolation-messageformat';
+import angularTranslateLoaderPartial from 'angular-translate-loader-partial';
 import accounts from './account';
 import { account, register, activate } from './account/account-service';
 import { password, passwordResetFinish, passwordResetInit } from './account/password';
@@ -40,6 +41,7 @@ angular
         angular_ui_router,
         ngResource,
         angularTranslateInterpolationMessageformat,
+        angularTranslateLoaderPartial,
         
         'tmh.dynamicLocale',
         'pascalprecht.translate',
