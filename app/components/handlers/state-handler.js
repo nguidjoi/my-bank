@@ -36,10 +36,10 @@
                 var titleKey = 'global.title' ;
 
                 // Set the page title key to the one configured in state or use default one
-                if (toState.data.pageTitle) {
-                    titleKey = toState.data.pageTitle;
-                }
-                translationHandler.updateTitle(titleKey);
+                //if (toState.data.pageTitle) {
+                //    titleKey = toState.data.pageTitle;
+                //}
+                //translationHandler.updateTitle(titleKey);
             });
 
             $rootScope.$on('$destroy', function () {
