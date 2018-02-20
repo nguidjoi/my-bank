@@ -13,7 +13,7 @@ export default function accountCtrl($translate, $state, $timeout, auth, errorCon
     vm.registerAccount = {};
     vm.success = null;
 
-    $timeout(function() { angular.element('#login').focus(); });
+    //$timeout(function() { angular.element('#login').focus(); });
 
     function createAccount() {
         if (vm.registerAccount.password !== vm.confirmPassword) {
