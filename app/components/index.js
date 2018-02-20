@@ -17,21 +17,21 @@ import { password, passwordResetFinish, passwordResetInit } from './account/pass
 import { principal } from './account/principal';
 import authentication from './authentication';
 import bankInformation from './bankInformation';
-import {languageController} from './language/language-controller';
+import { languageController } from './language/language-controller';
 import homes from './home';
 import personnalInformation from './personnalInformation';
 import { httpConfig } from './config/http-config';
 import { localStorageConfig } from './config/local-storage-config';
 import { translationConfig } from './config/translation-config';
-import {translationStorageProvider} from './config/translation-storage-provider';
+import { translationStorageProvider } from './config/translation-storage-provider';
 import { authInterceptor } from './interceptor/auth-interceptor';
 import { authExpiredInterceptor } from './interceptor/auth-expired-interceptor';
 import { errorHandlerInterceptor } from './interceptor/error-handler-interceptor';
 import { notificationInterceptor } from './interceptor/notofication-interceptor';
-import {translationHandler} from './handlers/translation-handler';
-import {stateHandler} from './handlers/state-handler';
-import {languageService} from './language/language-service';
-import {findLanguageFromKey, findLanguageRtlFromKey } from './language/language-filter';
+import { translationHandler } from './handlers/translation-handler';
+import { stateHandler } from './handlers/state-handler';
+import { languageService } from './language/language-service';
+import { findLanguageFromKey, findLanguageRtlFromKey } from './language/language-filter';
 
 angular
     .module('ae', [
@@ -51,7 +51,7 @@ angular
         personnalInformation.name,
         bankInformation.name
     ])
-    .controller('languageController',languageController)
+    .controller('languageController', languageController)
     .factory('account', account)
     .factory('register', register)
     .factory('activate', activate)
@@ -63,9 +63,9 @@ angular
     .factory('authExpiredInterceptor', authExpiredInterceptor)
     .factory('errorHandlerInterceptor', errorHandlerInterceptor)
     .factory('notificationInterceptor', notificationInterceptor)
-    .factory('languageService',languageService)
+    .factory('languageService', languageService)
     .factory('translationStorageProvider', translationStorageProvider)
-    .factory('translationHandler',translationHandler)
+    .factory('translationHandler', translationHandler)
     .factory('stateHandler', stateHandler)
     .filter(findLanguageFromKey)
     .filter(findLanguageRtlFromKey)
@@ -77,14 +77,22 @@ angular
     .constant('VERSION', "0.0.1-SNAPSHOT")
     .constant('DEBUG_INFO_ENABLED', true)
     .constant('BUILD_TIMESTAMP', "")
+    .constant('errorConstants', (function() {
+        var problemBaseUrl = 'http://www.jhipster.tech/problem';
+        return {
+            EMAIL_ALREADY_USED_TYPE: problemBaseUrl + '/email-already-used',
+            LOGIN_ALREADY_USED_TYPE: problemBaseUrl + '/login-already-used',
+            EMAIL_NOT_FOUND_TYPE: problemBaseUrl + '/email-not-found'
+        }
+    })())
     .run(run);
 
-     run.$inject = ['stateHandler', 'translationHandler'];
+run.$inject = ['stateHandler', 'translationHandler'];
 
-    function run(stateHandler, translationHandler) {
-        stateHandler.initialize();
-        translationHandler.initialize();
-    }
+function run(stateHandler, translationHandler) {
+    stateHandler.initialize();
+    translationHandler.initialize();
+}
 
 angular
     .element(document)
