@@ -57,33 +57,28 @@
             </div>
             <div class="setup-main">
                 <div class="setup-form-container">
-                    <form class='setup-form js-signup-form'>
+                    <form class='setup-form js-signup-form' ng-submit="vm.createAccountPersonnalInfo()">
                         <h2 class="f2-light mb-1">
                             Personnal informations.
                         </h2>
                         <dl class="form-group">
                             <dt><label>FirstName</label></dt>
-                            <dd><input class="form-control" type="text" value="vm.firstname"></dd>
+                            <dd><input class="form-control" type="text" ng-model="vm.registerAccount.firstName"></dd>
                             <p class="note">This will be your username. You can add the name of your organization later.</p>
                         </dl>
                         <br>
                         <dl class="form-group">
                             <dt><label>LastName</label></dt>
-                            <dd><input class="form-control" type="text" ng-model="vm.lastname"></dd>
+                            <dd><input class="form-control" type="text" ng-model="vm.registerAccount.lastName"></dd>
                             <p class="note">We'll occasionally send updates about your account to this inbox. We'll never share your email address with anyone.</p>
-                        </dl>
-
-                        <dl class="form-group">
-                            <dt><label>Password</label></dt>
-                            <dd><input class="form-control" type="text" value="text"></dd>
-                            <p class="note">Use at least one lowercase letter, one numeral, and seven characters.</p>
                         </dl>
 
                         <p class="tos-info">By clicking on "Create an account" below, you are agreeing to the
                             <a href="" target="_blank">Terms of Service</a> and the
-                            <a href="" target="_blank">Privacy Policy</a>.</p>
+                            <a href="" target="_blank">Privacy Policy</a>.
+                        </p>
 
-                        <button type="submit" class="btn btn-purple" ng-click="clickHandler()"> Create an account</button>
+                        <button type="submit" class="btn btn-purple">Create an account</button>
                     </form>
                 </div>
 
