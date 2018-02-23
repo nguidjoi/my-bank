@@ -25,6 +25,7 @@ export default function authenticationCtrl($rootScope, $scope, auth, $state) {
         auth.login({
             username: vm.username,
             password: vm.password,
+            rememberMe: true
         }).then(function(response) {
             vm.authenticationError = false;
             $state.go('app.home');
