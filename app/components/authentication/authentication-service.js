@@ -92,16 +92,20 @@
                }.bind(this));
 
            function loginThen(data) {
-               principal.identity(true).then(function(account) {
-                   // After the login the language will be changed to
-                   // the language selected by the user during his registration
-                   if (account !== null) {
-                       $translate.use(account.langKey).then(function() {
-                           $translate.refresh();
-                       });
+               principal.identity(true).then(
+                   function() { //account) {
+                       // After the login the language will be changed to
+                       // the language selected by the user during his registration
+                       //if (account !== null) {
+                       //$translate.use(account.langKey).then(function() {
+                       $translate.refresh();
+                       //});
+                       // }
+                       console.dir(data);
+                       deferred.resolve(data);
                    }
-                   deferred.resolve(data);
-               });
+
+               );
                return cb();
            }
 
