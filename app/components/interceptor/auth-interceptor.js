@@ -16,8 +16,9 @@ export function authInterceptor($rootScope, $q, $location, $localStorage, $sessi
         var token = $localStorage.authenticationToken || $sessionStorage.authenticationToken;
         if (token) {
             config.headers.Authorization = 'Bearer ' + token;
+            console.log(" JWT in " + token);
         }
-
+        console.log(" JWT out" + token);
         console.dir(config);
         return config;
     }
