@@ -1,11 +1,11 @@
 {
     "home": {
-        "title": "Bienvenue, Java Hipster !",
+        "title": "Bienvenue, sur MyBank !",
         "subtitle": "Ceci est votre page d'accueil",
         "logged": {
             "message": "Vous êtes connecté en tant que \"{{username}}\"."
         },
-        "question": "Si vous avez des questions à propos de JMyBank:",
+        "question": "Si vous avez des questions à propos de MyBank :",
         "link": {
             "homepage": "Page d'accueil de JHipster",
             "stackoverflow": "JHipster sur Stack Overflow",
