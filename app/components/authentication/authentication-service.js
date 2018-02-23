@@ -1,8 +1,8 @@
    'use strict';
 
-   auth.$inject = ['$rootScope', '$state', '$sessionStorage', '$q', 'principal', 'authServerProvider', 'account', 'register', 'activate', 'password', 'passwordResetInit', 'passwordResetFinish'];
+   auth.$inject = ['$rootScope', '$state', '$translate', '$sessionStorage', '$q', 'principal', 'authServerProvider', 'account', 'register', 'activate', 'password', 'passwordResetInit', 'passwordResetFinish'];
 
-   export function auth($rootScope, $state, $sessionStorage, $q, principal, authServerProvider, account, register, activate, password, passwordResetInit, passwordResetFinish) {
+   export function auth($rootScope, $state, $translate, $sessionStorage, $q, principal, authServerProvider, account, register, activate, password, passwordResetInit, passwordResetFinish) {
        var service = {
            activateAccount: activateAccount,
            authorize: authorize,
