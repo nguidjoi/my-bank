@@ -17,6 +17,8 @@ export function authInterceptor($rootScope, $q, $location, $localStorage, $sessi
         if (token) {
             config.headers.Authorization = 'Bearer ' + token;
         }
+
+        console.dir(config);
         return config;
     }
 }
