@@ -10,6 +10,7 @@ export function account($resource) {
             isArray: false,
             interceptor: {
                 response: function(response) {
+                    console.log('account get response in interceptor');
                     // expose response
                     return response;
                 }
