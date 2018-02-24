@@ -24,7 +24,7 @@
                password: credentials.password,
                rememberMe: credentials.rememberMe
            };
-           account.get();
+
            const url = 'http://localhost:8080/api/authenticate';
            return $http.post(url, data).success(authenticateSuccess);
 
@@ -33,6 +33,7 @@
                if (angular.isDefined(bearerToken) && bearerToken.slice(0, 7) === 'Bearer ') {
                    var jwt = bearerToken.slice(7, bearerToken.length);
                    service.storeAuthenticationToken(jwt, credentials.rememberMe);
+                   account.get();
                    return jwt;
                }
            }
