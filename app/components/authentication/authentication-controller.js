@@ -2,7 +2,7 @@
 export default function authenticationCtrl($rootScope, $scope, auth, $state) {
 
     var vm = this;
-
+vm.loading = false;
     vm.authenticationError = false;
     vm.cancel = cancel;
     vm.credentials = {};
@@ -21,7 +21,7 @@ export default function authenticationCtrl($rootScope, $scope, auth, $state) {
     }
 
     function login() {
-
+        vm.loading= true;
         auth.login({
             username: vm.username,
             password: vm.password,
@@ -33,7 +33,9 @@ export default function authenticationCtrl($rootScope, $scope, auth, $state) {
 
         }).catch(function(error) {
             console.log(error);
+            vm.loading= false;
             vm.authenticationError = true;
+
         });
     }
 

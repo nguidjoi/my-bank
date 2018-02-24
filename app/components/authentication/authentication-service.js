@@ -35,7 +35,7 @@
 
        function authorize(force) {
            var authReturn = principal.identity(force).then(authThen);
-
+        console.log('in authorize');
            return authReturn;
 
            function authThen() {
