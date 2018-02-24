@@ -10,7 +10,7 @@ export function authInterceptor($rootScope, $q, $location, $localStorage, $sessi
 
     function request(config) {
         //if (!config || !config.url || /^http/.test(config.url)) return config;
-        console.log('authInterceptor');
+        console.log('authInterceptor' + config.url);
         /*jshint camelcase: false */
         config.headers = config.headers || {};
         var token = $localStorage.authenticationToken || $sessionStorage.authenticationToken;
