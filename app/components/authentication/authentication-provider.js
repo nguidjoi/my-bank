@@ -35,7 +35,6 @@
                    console.log("In auth" + jwt);
 
                    service.storeAuthenticationToken(jwt, credentials.rememberMe);
-                   console.dir(headers);
                    return jwt;
                }
            }

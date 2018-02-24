@@ -64,9 +64,9 @@
             }
 
             // retrieve the identity data from the server, update the identity object, and then resolve.
-            //account.get().$promise
-            //    .then(getAccountThen)
-              //  .catch(getAccountCatch);
+            account.get().$promise
+                .then(getAccountThen)
+                .catch(getAccountCatch);
 
             return deferred.promise;
 

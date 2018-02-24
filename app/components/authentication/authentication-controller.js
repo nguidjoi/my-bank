@@ -21,16 +21,16 @@ vm.loading = false;
     }
 
     function login() {
-        vm.loading= true;
+            vm.loading= true;
         auth.login({
             username: vm.username,
             password: vm.password,
             rememberMe: true
         }).then(function(response) {
             vm.authenticationError = false;
-            $state.go('app.home');
             $rootScope.$broadcast('authenticationSuccess');
-
+            vm.loading= false;
+            $state.go('app.home');
         }).catch(function(error) {
             console.log(error);
             vm.loading= false;
