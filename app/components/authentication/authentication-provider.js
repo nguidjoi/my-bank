@@ -1,8 +1,8 @@
    'use strict';
 
-   authServerProvider.$inject = ['$http', '$localStorage', '$sessionStorage', '$q'];
+   authServerProvider.$inject = ['$http', '$localStorage', 'account', '$sessionStorage', '$q'];
 
-   export function authServerProvider($http, $localStorage, $sessionStorage, $q) {
+   export function authServerProvider($http, $localStorage, account, $sessionStorage, $q) {
        var service = {
            getToken: getToken,
            login: login,
@@ -24,7 +24,7 @@
                password: credentials.password,
                rememberMe: credentials.rememberMe
            };
-
+           account.get();
            const url = 'http://localhost:8080/api/authenticate';
            return $http.post(url, data).success(authenticateSuccess);
 
