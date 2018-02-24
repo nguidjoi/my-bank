@@ -35,8 +35,8 @@
 
        function authorize(force) {
            var authReturn = principal.identity(force).then(authThen);
-        console.log('in authorize');
-        console.dir(authReturn);
+           console.log('in authorize');
+           console.dir(authReturn);
            return authReturn;
 
            function authThen() {
@@ -93,18 +93,7 @@
                }.bind(this));
 
            function loginThen(data) {
-               principal.identity(true).then(
-                   function(account) { 
-                       if (account !== null) {
-                            $translate.use(account.langKey).then(function() {
-                            $translate.refresh();
-                       });
-                       }
-                       
-                       deferred.resolve(data);
-                   }
 
-               );
                return cb();
            }
 

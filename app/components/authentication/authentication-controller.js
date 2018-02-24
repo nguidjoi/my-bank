@@ -28,9 +28,10 @@ export default function authenticationCtrl($rootScope, $scope, auth, $state) {
             rememberMe: true
         }).then(function(response) {
             vm.authenticationError = false;
-            //$rootScope.$broadcast('authenticationSuccess');
+
             vm.loading = false;
             $state.go('app.home');
+            $rootScope.$broadcast('authenticationSuccess');
         }).catch(function(error) {
             console.log(error);
             vm.loading = false;
