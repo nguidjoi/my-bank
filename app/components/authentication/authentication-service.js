@@ -35,12 +35,10 @@
 
        function authorize(force) {
            var authReturn = principal.identity(force).then(authThen);
-           console.log('in authorize');
            return authReturn;
 
            function authThen() {
                var isAuthenticated = principal.isAuthenticated();
-               console.log('in authThen');
                // an authenticated user can't access to login and register pages
                if (isAuthenticated && $rootScope.toState.parent === 'account' && ($rootScope.toState.name === 'login' || $rootScope.toState.name === 'register' || $rootScope.toState.name === 'social-auth')) {
                    $state.go('home');
