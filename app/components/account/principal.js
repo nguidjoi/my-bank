@@ -72,12 +72,14 @@
             return deferred.promise;
 
             function getAccountThen(account) {
+                console.log('getAccountThen');
                 _identity = account.data;
                 _authenticated = true;
                 deferred.resolve(_identity);
             }
 
             function getAccountCatch() {
+                console.log('getAccountCatch');
                 _identity = null;
                 _authenticated = false;
                 deferred.resolve(_identity);
