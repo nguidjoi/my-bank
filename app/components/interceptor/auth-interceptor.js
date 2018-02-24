@@ -9,7 +9,7 @@ export function authInterceptor($rootScope, $q, $location, $localStorage, $sessi
     return service;
 
     function request(config) {
-        if (!config || !config.url || /^http/.test(config.url)) return config;
+        //if (!config || !config.url || /^http/.test(config.url)) return config;
         console.log('authInterceptor');
         /*jshint camelcase: false */
         config.headers = config.headers || {};
