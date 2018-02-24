@@ -10,6 +10,7 @@ export function account($resource) {
             isArray: false,
             interceptor: {
                 response: function(response) {
+                    console.dir(response);
                     return response;
                 }
             }
