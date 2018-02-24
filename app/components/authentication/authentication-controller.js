@@ -2,7 +2,7 @@
 export default function authenticationCtrl($rootScope, $scope, auth, $state) {
 
     var vm = this;
-vm.loading = false;
+    vm.loading = false;
     vm.authenticationError = false;
     vm.cancel = cancel;
     vm.credentials = {};
@@ -21,19 +21,19 @@ vm.loading = false;
     }
 
     function login() {
-            vm.loading= true;
+        vm.loading = true;
         auth.login({
             username: vm.username,
             password: vm.password,
             rememberMe: true
         }).then(function(response) {
             vm.authenticationError = false;
-            $rootScope.$broadcast('authenticationSuccess');
-            vm.loading= false;
+            //$rootScope.$broadcast('authenticationSuccess');
+            vm.loading = false;
             $state.go('app.home');
         }).catch(function(error) {
             console.log(error);
-            vm.loading= false;
+            vm.loading = false;
             vm.authenticationError = true;
 
         });

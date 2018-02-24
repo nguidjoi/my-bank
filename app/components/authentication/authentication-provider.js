@@ -32,8 +32,6 @@
                var bearerToken = headers('Authorization');
                if (angular.isDefined(bearerToken) && bearerToken.slice(0, 7) === 'Bearer ') {
                    var jwt = bearerToken.slice(7, bearerToken.length);
-                   console.log("In auth" + jwt);
-
                    service.storeAuthenticationToken(jwt, credentials.rememberMe);
                    return jwt;
                }
