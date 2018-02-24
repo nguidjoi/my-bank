@@ -3,21 +3,7 @@ register.$inject = ['$resource'];
 activate.$inject = ['$resource'];
 export function account($resource) {
     console.log('account get');
-    var service = $resource('http://localhost:8080/api/account', {}, {
-        'get': {
-            method: 'GET',
-            params: {},
-            isArray: false,
-            interceptor: {
-                response: function(response) {
-                    console.log('account get response in interceptor');
-                    // expose response
-                    return response;
-                }
-            }
-        }
-    });
-
+    var service = {};
     return service;
 }
 
