@@ -1,7 +1,7 @@
 'use strict';
 
-authInterceptor.$inject = ['$rootScope', '$state', '$q', '$location', '$localStorage', '$sessionStorage'];
-export function authInterceptor($rootScope, $state, $q, $location, $localStorage, $sessionStorage) {
+authInterceptor.$inject = ['$rootScope', '$q', '$location', '$localStorage', '$sessionStorage'];
+export function authInterceptor($rootScope, $q, $location, $localStorage, $sessionStorage) {
     var service = {
         request: request
     };
@@ -17,7 +17,7 @@ export function authInterceptor($rootScope, $state, $q, $location, $localStorage
         if (token) {
             config.headers.Authorization = 'Bearer ' + token;
         }
-    
+
         return config;
     }
 }
