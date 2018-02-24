@@ -93,7 +93,18 @@
                }.bind(this));
 
            function loginThen(data) {
+               principal.identity(true).then(
+                   function(account) {
+                       if (account !== null) {
+                           $translate.use(account.langKey).then(function() {
+                               $translate.refresh();
+                           });
+                       }
 
+                       deferred.resolve(data);
+                   }
+
+               );
                return cb();
            }
 

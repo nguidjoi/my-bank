@@ -2,7 +2,6 @@
 export default function authenticationCtrl($rootScope, $scope, auth, $state) {
 
     var vm = this;
-    vm.loading = false;
     vm.authenticationError = false;
     vm.cancel = cancel;
     vm.credentials = {};
@@ -21,14 +20,13 @@ export default function authenticationCtrl($rootScope, $scope, auth, $state) {
     }
 
     function login() {
-        //vm.loading = true;
+        vm.loading = true;
         auth.login({
             username: vm.username,
             password: vm.password,
             rememberMe: true
         }).then(function(response) {
             vm.authenticationError = false;
-            vm.loading = false;
             $state.go('app.home');
             $rootScope.$broadcast('authenticationSuccess');
         }).catch(function(error) {
