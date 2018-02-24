@@ -7,7 +7,12 @@ export function account($resource) {
         'get': {
             method: 'GET',
             params: {},
-            isArray: false
+            isArray: false,
+            interceptor: {
+                response: function(response) {
+                    return response;
+                }
+            }
         }
     });
 
