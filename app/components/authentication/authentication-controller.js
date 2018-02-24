@@ -33,7 +33,6 @@ export default function authenticationCtrl($rootScope, $scope, auth, $state) {
             $state.go('app.home');
             $rootScope.$broadcast('authenticationSuccess');
         }).catch(function(error) {
-            console.log(error);
             vm.loading = false;
             vm.authenticationError = true;
 
